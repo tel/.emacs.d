@@ -33,7 +33,14 @@
 (defun install-package-from-url (sym url)
   (unless (or (member sym package-activated-list)
 	      (functionp sym))
-    (let ((name (car (last (split-string url "/")))))
-      (let ((path (concat "/tmp/" name)))
-	(url-copy-file url name)
-	(package-install-file name)))))
+    (let ((path (concat "/tmp/" (car (last (split-string url "/"))))))
+      (url-copy-file url path)
+      ;; gunzip if necessary and update the path to the new file
+      (if (string= (car (last (split-string blahstr "\\."))) "gz")
+	  (progn
+	    (shell-command (concat "gunzip " path))
+	    (setq path (substring path 0 -3))))
+      ;; Do the actual install
+      (package-install-file path)
+      ;; Kill the dl'd file
+      (shell-command (concat "rm -f " path)))))
