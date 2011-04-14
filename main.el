@@ -22,13 +22,20 @@
 		   'magit
 		   'gist
 		   'paredit
-		   'full-ack))
+		   'full-ack
+		   'zenburn))
 (install-package-from-url 'auctex 
 			  "http://elpa.gnu.org/packages/auctex-11.86.tar")
 
 ;; Load custom functions
 ;;
 (load (dotpath "basic/fns.el"))
+
+;; Color Theme
+;;
+(add-to-path (dotpath "color-theme"))
+(require 'color-theme)
+(color-theme-zenburn)
 
 ;; Custom bindings
 (global-set-key (kbd "C-x [")           'vi-mode)

@@ -2,6 +2,13 @@
 
 ;; Basic emacslisp utilities for running the .emacs initialization file
 
+;; Path functions
+;;
+(defun add-to-path (thing &rest paths)
+  (add-to-list 'load-path thing)
+  (mapcar (lambda (path) (add-to-list 'load-path path))
+	  paths))
+
 ;; Autoload Macros
 ;;
 (defmacro autoload-then (args &rest block)
