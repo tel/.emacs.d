@@ -1,0 +1,7 @@
+*~
+elpa/*/
+elpa/archive-contents
+elpa/builtin-packages
+*.tar
+*.tar.gz
+.#*
