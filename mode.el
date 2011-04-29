@@ -1,4 +1,8 @@
+;; Python mode
+;;
 
+(load (dotpath "f/virtualenv.el"))
+(virtualenv-workon "pyenv")
 
 ;; Cython mode
 ;;
