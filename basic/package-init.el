@@ -36,7 +36,7 @@
     (let ((path (concat "/tmp/" (car (last (split-string url "/"))))))
       (url-copy-file url path)
       ;; gunzip if necessary and update the path to the new file
-      (if (string= (car (last (split-string blahstr "\\."))) "gz")
+      (if (string= (car (last (split-string path "\\."))) "gz")
 	  (progn
 	    (shell-command (concat "gunzip " path))
 	    (setq path (substring path 0 -3))))

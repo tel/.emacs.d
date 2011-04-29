@@ -23,6 +23,7 @@
 		   'gist
 		   'paredit
 		   'full-ack
+		   'yasnippet-bundle
 		   'zenburn))
 (install-package-from-url 'auctex 
 			  "http://elpa.gnu.org/packages/auctex-11.86.tar")
