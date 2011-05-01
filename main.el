@@ -64,6 +64,10 @@
 (add-to-list 'load-path (dotpath "matlab/"))
 (load-library "matlab-load")
 
+;; Ido Mode
+(require 'ido)
+(ido-mode)
+
 ;; Extra modes
 (load (dotpath "mode.el"))
 
