@@ -65,3 +65,8 @@
                "\\|object\\|public\\|struct\\|type\\|union\\|void"
                "\\)\\>")
       1 font-lock-keyword-face t))))
+
+;; Haskell mode
+;;
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)

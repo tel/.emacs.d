@@ -14,7 +14,13 @@
   (package-initialize))
 (load (dotpath "basic/package-init.el"))
 
+(dolist (source '(("josh" . "http://josh.github.com/elpa/")
+                  ("technomancy" . "http://repo.technomancy.us/emacs/")
+                  ("elpa" . "http://tromey.com/elpa/")))
+  (add-to-list 'package-archives source t))
+
 ; Install all the defaults
+(package-initialize)
 (do-packages (list 'idle-highlight
 		   'css-mode
 		   'yaml-mode
@@ -23,6 +29,7 @@
 		   'gist
 		   'paredit
 		   'full-ack
+		   'haskell-mode
 		   'yasnippet-bundle
 		   'zenburn))
 (install-package-from-url 'auctex 
@@ -56,6 +63,10 @@
 ;; Matlab
 (add-to-list 'load-path (dotpath "matlab/"))
 (load-library "matlab-load")
+
+;; Ido Mode
+(require 'ido)
+(ido-mode)
 
 ;; Extra modes
 (load (dotpath "mode.el"))
