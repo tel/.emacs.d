@@ -5,3 +5,4 @@ elpa/builtin-packages
 *.tar
 *.tar.gz
 .#*
+*.pyc
