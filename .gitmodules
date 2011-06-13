@@ -1,3 +1,6 @@
 [submodule "vendor/pymacs"]
 	path = vendor/pymacs
 	url = https://github.com/pinard/Pymacs.git
+[submodule "vendor/hpaste"]
+	path = vendor/hpaste
+	url = git://git.swclan.homelinux.org/hpaste.git

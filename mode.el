@@ -2,7 +2,8 @@
 ;;
 (add-to-path (dotpath "vendor/pymacs")
 	     (dotpath "vendor/ropemacs")
-	     (dotpath "vendor/python-mode"))
+	     (dotpath "vendor/python-mode")
+	     (dotpath "vendor/hpaste"))
 
 (require 'ipython)
 (setq py-python-command-args '( "-colors" "Linux"))
@@ -65,4 +66,5 @@
 ;; Haskell mode
 ;;
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+(require 'hpaste)
