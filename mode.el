@@ -7,7 +7,7 @@
 	     (dotpath "vendor/hpaste"))
 
 (load (dotpath "f/virtualenv.el"))
-(virtualenv-workon "pyenv")
+(if (boundp '*PYENV*) (virtualenv-workon "pyenv"))
 
 (require 'ipython)
 (setq py-python-command-args '( "-colors" "Linux"))
