@@ -70,6 +70,8 @@
 
 ;; Extra modes
 (load (dotpath "mode.el"))
+(setq term-setup-hook 'vip-mode)
+(define-key global-map "\C-z" 'vip-change-mode-to-vi)
 
 ;; Start up a shell
 (shell)

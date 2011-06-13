@@ -1,9 +1,13 @@
 ;; Python mode
 ;;
+
 (add-to-path (dotpath "vendor/pymacs")
 	     (dotpath "vendor/ropemacs")
 	     (dotpath "vendor/python-mode")
 	     (dotpath "vendor/hpaste"))
+
+(load (dotpath "f/virtualenv.el"))
+(virtualenv-workon "pyenv")
 
 (require 'ipython)
 (setq py-python-command-args '( "-colors" "Linux"))
